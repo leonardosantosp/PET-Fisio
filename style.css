@@ -69,10 +69,15 @@ body {
   border-radius: 0.25rem;
   font: 500 1.2rem var(--body-font);
   transition: background 0.3s;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.29);
+  transition: transform 1s;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+  transform: translateX(0) scale(0.9);
+  border: #f3c826;
 }
 
-.button:hover {
+.button:hover, 
+.button:focus{
+  transform: translateX(10px) scale(1.2);
   background: var(--base-color-alt);
 }
 
@@ -188,7 +193,7 @@ nav ul li a::after {
 
   position: absolute;
   left: 0;
-  bottom: -1.5rem;
+  bottom: -1.67rem;
 
   transition: width 0.2s;
 }
@@ -262,6 +267,8 @@ nav.show div.icon-close {
 /*====  HOME ============================ */
 #home {
   overflow: hidden;
+  padding-bottom: 0;
+  display: flex;
 }
 
 #home .container {
@@ -270,41 +277,29 @@ nav.show div.icon-close {
 
 #home .image {
   position: relative;
-}
-
-#home .image::before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background: var(--base-color-second);
-  position: absolute;
-  top: -16.8%;
-  left: 16.7%;
   z-index: 0;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.18);
 }
 
-#home .image img {
-  position: relative;
-  right: -3rem;
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9);
-}
-
-#home .image img,
-#home .image::before {
-  border-radius: 0.25rem;
-  
+#home .image h1{
+  position: absolute;
+  z-index: 1;
+  color: white;
+  margin-left: 80px;
+  font-size: 36px;
+  margin-top: 20px;
+  font-weight: 900;
+  font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #home .text {
-  margin-left: 1.5rem;
+  margin-left: 3rem;
   margin-right: 1.5rem;
   text-align: center;
 }
 
 #home .text h2 {
   margin-left: 1rem;
-  font-size: 38px;
+  font-size: 37px;
 }
 
 #home .text p {
@@ -312,9 +307,39 @@ nav.show div.icon-close {
   font-size: 20px;
 }
 
+.content{
+  height: 400px;
+  width: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  bottom: 25%;
+  left: 8%;
+  animation: anima;
+  animation-duration: 900ms;
+}
+
+.box-image img{
+  position: absolute;
+  width: 650px;
+  height: 500px;
+  animation: anima;
+  animation-duration: 900ms;
+  
+}
+
+
+@keyframes anima{
+  from{transform: translate(-50px, 00);}
+  to{transform: translate(0px, 00);}
+}
+
+input{
+  display: none;
+}
 /*====  ABOUT ============================ */
 #about {
-  background-image: url("../assets/Images/Fundo2.png");
+  background-image: url("assets/Images/Fundo2.png");
 }
 
 #about .container {
@@ -335,23 +360,66 @@ nav.show div.icon-close {
 }
 
 /*====  SERVICES ============================ */
+
 .cards.grid {
   gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  margin-left: 10%;
 }
 
 .card {
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 0.25rem solid var(--base-color);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
+  vertical-align: middle;
+  border-style: none;
+  width: 50%;
+  height: auto;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.card i {
-  display: block;
-  margin-bottom: 1.5rem;
-  font-size: 5rem;
-  color: var(--base-color);
+.card img{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  transition: 0.4s;
+}
+
+.card:hover{
+  vertical-align: middle;
+  border-style: none;
+  width: 60%;
+  height: auto;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.2s;
+ background-color: #f7f7f7;
+}
+
+.card:hover img{
+  transform:translateY(-20px);
+}
+
+.card::after{
+  content: "";
+  width: 0%;
+  height: 4px;
+  background-color: var(--base-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.4s ease-in-out;
+  transition: 0.5s;
+}
+
+.card:hover::after{
+  width: 100%;
 }
 
 .card .title {
@@ -380,34 +448,53 @@ nav.show div.icon-close {
 
 /*====  CONTACT ============================ */
 #contact{
-  background-image: url("../assets/Images/Fundo2.png");
+  background-image: url("assets/Images/Fundo2.png");
 }
 
 #contact .grid {
   gap: 4rem;
 }
 
-#contact .text p {
-  margin-bottom: 2rem;
+#contact h2{
+  margin-left: 300px;
+  margin-top: -50px;
 }
 
-#contact .button i,
-#contact ul li i {
-  font-size: 1.5rem;
-  margin-right: 0.625rem;
+#contact .links img {
+  margin-left: 243px;
+  fill: #f3c826;
 }
 
-#contact ul.grid {
-  gap: 2rem;
+.links {
+  margin-left: 285px;
 }
 
-#contact ul li {
-  display: flex;
-  align-items: center;
+.links i {
+  font-size: 15rem;
+  color: #f3c826;
+   
 }
 
-#contact ul li i {
-  color: var(--base-color);
+.links a{
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.icon-youtube{
+  padding-left: 158px;
+}
+
+
+.icon-instagram{
+  margin-left: -21px;
+}
+
+.links a:hover{
+  transform: translateY(-30px);
+}
+
+.links a:hover i{
+  color: #f7d764;
 }
 
 /*====  FOOTER ============================ */
@@ -453,22 +540,25 @@ footer .social a:hover {
 .back-to-top {
   background: var(--base-color);
   color: var(--text-color-light);
-
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-
-  padding: 0.5rem;
   clip-path: circle();
-
-  font-size: 1.5rem;
-  line-height: 0;
-
+  width: 40px;
+  height: 40px;
+  background-image: url("assets/Images/icons8-acima-30.png");
+  background-position: center;
   visibility: hidden;
   opacity: 0;
-
-  transition: 0.3s;
+  background-repeat: no-repeat;
+  transition: 0.5s;
   transform: translateY(100%);
+  align-items: center;
+}
+
+.back-to-top:hover{
+  background-image: url(assets/Images/ezgif.com-gif-maker.gif);
+
 }
 
 .back-to-top.show {
@@ -483,6 +573,7 @@ footer .social a:hover {
   /* reusable classes */
   #home .container{
     margin-left: 50px;
+
   }
 
   .container {
@@ -561,23 +652,16 @@ footer .social a:hover {
   }
 
   /* services */
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 
-  .card {
-    padding-left: 3rem;
-    padding-right: 3rem;
+  .card img{
+    width: 200px;
+    height: 250px;
   }
 
   /* contact */
-  #contact .container {
-    grid-auto-flow: column;
-    align-items: center;
-  }
 
   #contact .text {
-    max-width: 25rem;
+    max-width: 37rem;
   }
 
   /* footer */
@@ -609,5 +693,15 @@ footer .social a:hover {
   :root {
     --title-font-size: 2.25rem;
     --subtitle-font-size: 1.125rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  #home .container{
+    margin-left: 300px;
+  }
+
+  #about .image img{
+    float: left;
   }
 }
