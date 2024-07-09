@@ -474,18 +474,22 @@ input{
   transform: translateY(-20px);
 }
 
-.icons2{
-  margin-left: 25px;
-}
-
 .icons2 img{
-  width: 90px !important;
-  height: 90px !important;
+  width: 100px !important;
+  height: 100px !important;
+  transition: 0.7s;
+  margin-right: 21px;
 }
 
-.spotify img{
-  width: 80px !important;
-  height: 80px !important;
+.icons2 img:hover{
+  transform: translateY(-20px);
+}
+
+
+.dimension-icon img{
+  width: 77px !important;
+  height: 77px !important;
+  margin-bottom: 12px;
 }
 
 /* swiper */
