@@ -478,13 +478,16 @@ input{
   width: 100px !important;
   height: 100px !important;
   transition: 0.7s;
-  margin-right: 21px;
+  margin-right: 19px;
 }
 
 .icons2 img:hover{
   transform: translateY(-20px);
 }
 
+.kwai img{
+  margin-right: 55px;
+}
 
 .dimension-icon img{
   width: 77px !important;
@@ -754,8 +757,10 @@ footer .social a:hover {
     --title-font-size: 2.25rem;
     --subtitle-font-size: 1.125rem;
   }
+
 }
 
+/* large devices: 1600 > */
 @media (min-width: 1600px) {
   #home .container{
     margin-left: 300px;
@@ -763,5 +768,44 @@ footer .social a:hover {
 
   #about .image img{
     float: left;
+  }
+
+}
+
+/* large devices: 1000 < */
+@media (max-width: 1000px) {
+  :root {
+    --title-font-size: 1rem;
+    --subtitle-font-size: 0.9rem;
+  }
+
+  #home .text h2 {
+    font-size: 15px;
+  }
+
+  .box-image img {
+    position: relative;
+    width: 300px;
+    height: 150px;
+    right: 30px;
+    top: 90px;
+  }
+
+  #home .text p {
+    margin-bottom: 2rem;
+    font-size: 15px;
+  }
+
+  .button {
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    font: 500 0.7rem var(--body-font);
+  }
+
+  #about .image img {
+    position: relative;
+    width: 200px;
+    height: 200px;
   }
 }
