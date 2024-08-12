@@ -365,7 +365,7 @@ input{
   gap: 1.5rem;
   display: flex;
   align-items: center;
-  margin-left: 10%;
+  margin-left: 20%;
 }
 
 .card {
@@ -375,8 +375,8 @@ input{
   text-align: center;
   vertical-align: middle;
   border-style: none;
-  width: 50%;
-  height: auto;
+  width: 40%;
+  height: 80%;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.5s;
     transition: all 0.5s;
@@ -389,13 +389,15 @@ input{
   margin-top: 50px;
   margin-bottom: 50px;
   transition: 0.4s;
+  width: 120px !important;
+  height: 200px !important;
 }
 
 .card:hover{
   vertical-align: middle;
   border-style: none;
-  width: 60%;
-  height: auto;
+  width: 45%;
+  height: 80%;
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   transition: all 0.2s;
@@ -423,8 +425,74 @@ input{
 }
 
 .card .title {
-  font-size: 1.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.1rem;
+}
+
+.icons2 a{
+  margin-right: 30px;
+}
+
+.card button{
+  height: 1.825rem;
+  margin-bottom: 20px;
+}
+
+.background-media{
+  width: 600px !important;
+  height: 600px !important;
+  position: relative;
+  left: 450px;
+  bottom: 276px;
+}
+
+.icons{
+  margin-top: 40px;
+}
+
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact .title{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.icons img{
+  width: 100px !important;
+  height: 100px !important;
+  transition: 0.7s;
+  margin-right: 40px;
+}
+
+.icons img:hover{
+  transform: translateY(-20px);
+}
+
+.icons2 img{
+  width: 100px !important;
+  height: 100px !important;
+  transition: 0.7s;
+  margin-right: 19px;
+}
+
+.icons2 img:hover{
+  transform: translateY(-20px);
+}
+
+.kwai img{
+  margin-right: 55px;
+}
+
+.dimension-icon img{
+  width: 77px !important;
+  height: 77px !important;
+  margin-bottom: 12px;
 }
 
 /* swiper */
@@ -451,12 +519,7 @@ input{
   background-image: url("assets/Images/Fundo2.png");
 }
 
-#contact .grid {
-  gap: 4rem;
-}
-
 #contact h2{
-  margin-left: 300px;
   margin-top: -50px;
 }
 
@@ -566,7 +629,6 @@ footer .social a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
 /*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
@@ -694,8 +756,10 @@ footer .social a:hover {
     --title-font-size: 2.25rem;
     --subtitle-font-size: 1.125rem;
   }
+
 }
 
+/* large devices: 1600 > */
 @media (min-width: 1600px) {
   #home .container{
     margin-left: 300px;
@@ -704,4 +768,85 @@ footer .social a:hover {
   #about .image img{
     float: left;
   }
+
+}
+
+/* large devices: 1000 < */
+@media (max-width: 1200px) {
+  :root {
+    --title-font-size: 1rem;
+    --subtitle-font-size: 0.9rem;
+  }
+
+  #home .text h2 {
+    font-size: 15px;
+  }
+
+  .box-image img {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    right: 40px;
+    top: 100px;
+  }
+
+  #home .text p {
+    margin-bottom: 2rem;
+    font-size: 15px;
+  }
+
+  .button {
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    font: 500 0.7rem var(--body-font);
+  }
+
+  #about .image img {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* large devices: 1600 > */
+@media (max-width: 600px) {
+  .card{
+    width: 50%;
+    height: 80%;
+    position: relative;
+    right: 10%;
+  }
+
+  .card img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: 0.4s;
+    width: 60px !important;
+    height: 120px !important;
+  }
+
+  .card::after {
+    margin-bottom: 0rem;
+    height: 0px;
+  }
+  
+  .card .title {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+  }
+  
+  .card:hover{
+    width: 50%;
+    height: 80%;
+  }
+  
+  .card:hover img{
+    transform:none;
+  }
+
+  .card button{
+    height: 1.2rem; 
+  }
+
 }
