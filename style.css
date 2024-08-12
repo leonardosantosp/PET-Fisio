@@ -811,11 +811,25 @@ footer .social a:hover {
 
 /* large devices: 1600 > */
 @media (max-width: 600px) {
+  body{
+    width: 100%;
+  }
+  
+  .box-image img{
+    width: 200px;
+    height: 100px;
+    position: relative;
+  }
+
   .card{
     width: 50%;
     height: 80%;
     position: relative;
-    right: 10%;
+    right: 20%;
+  }
+
+  .icon-menu{
+    float: right;
   }
 
   .card img{
@@ -847,6 +861,11 @@ footer .social a:hover {
 
   .card button{
     height: 1.2rem; 
+  }
+  
+  .title{
+    font-size: 0.87rem !important;
+    width: 100px;
   }
 
 }
