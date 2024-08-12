@@ -814,11 +814,12 @@ footer .social a:hover {
   body{
     width: 100%;
   }
-  
+
   .box-image img{
     width: 200px;
     height: 100px;
     position: relative;
+    right: 60px;
   }
 
   .card{
@@ -864,8 +865,30 @@ footer .social a:hover {
   }
   
   .title{
-    font-size: 0.87rem !important;
+    font-size: 0.50rem !important;
     width: 100px;
   }
 
+  .text p{
+    font-size: 0.40rem !important;
+    position: relative;
+    left: 6px;
+  }
+
+  .button{
+    width: 90px;
+    height: 20px;
+    font-size: 0.36rem;
+    position: relative;
+    left: 4px;
+  }
+
+  #about .image{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 60px;
+  }
+
+  
 }
